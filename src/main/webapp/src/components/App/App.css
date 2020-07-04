@@ -1,0 +1,10 @@
+.App {
+  position: relative;
+}
+
+.App .content {
+  border: 1px solid #000;
+  margin-top: 22px;
+  margin-left: 264px;
+  margin-right: 16px;
+}
