@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   const loadMenus = () => {
     console.log('renderiza menu')  
-    return axios.get('menus').then(response => {
+    return axios.get('menus?enabled=true').then(response => {
       setMenus(response.data)
 
     }).catch(err => {
@@ -26,16 +26,14 @@ const Sidebar = () => {
     })
   }
 
-  const menuList = menus.map(menu => (
+  const menuList = menus.map(menu => (    
     <Nav.Item key={menu.id}>      
       <Link className="nav-link" to={menu.link}>
         <FontAwesomeIcon className="nav-icon" icon={icons[menu.icone]} />
         <span className="ml-2">{menu.titulo}</span>
-
       </Link>
       
     </Nav.Item>
-
   ))
 
   return (

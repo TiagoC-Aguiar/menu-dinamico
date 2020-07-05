@@ -19,8 +19,10 @@ public class MenuEndpoint {
     }
 
     @GetMapping
-    public ResponseEntity<?> listMenus() {
-        return new ResponseEntity<>(dao.findAll(), HttpStatus.OK);
+    public ResponseEntity<?> listMenus(@RequestParam(required = false) boolean enabled) {
+//        if(enabled)
+        return new ResponseEntity<>(dao.findByStatus(enabled), HttpStatus.OK);
+//        return new ResponseEntity<>(dao.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
