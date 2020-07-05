@@ -1,13 +1,12 @@
 package br.com.exemplo.endpoint;
 
+import br.com.exemplo.error.ResourceNotFoundException;
+import br.com.exemplo.model.MenuEntity;
 import br.com.exemplo.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("menus")
@@ -19,9 +18,42 @@ public class MenuEndpoint {
         this.dao = dao;
     }
 
-//    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<?> listMenus() {
         return new ResponseEntity<>(dao.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findMenuById(@PathVariable Integer id) {
+        menuExists(id);
+        MenuEntity menu = dao.findById(id).get();
+        return new ResponseEntity<>(menu, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<?> save(@RequestBody MenuEntity menu) {
+        return new ResponseEntity<>(dao.save(menu), HttpStatus.CREATED);
+    }
+
+    @PutMapping
+    public ResponseEntity<?> update(@RequestBody MenuEntity menu) {
+        menuExists(menu.getId());
+        return new ResponseEntity<>(dao.save(menu), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        menuExists(id);
+        dao.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    private void menuExists(Integer id) {
+        try {
+            dao.findById(id).get();
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("Menu não contrado com id: " + id);
+        }
+
     }
 }
