@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   const loadMenus = () => {
     console.log('renderiza menu')  
-    return axios.get('menus?enabled=true').then(response => {
+    return axios.get('menus').then(response => {
       setMenus(response.data)
 
     }).catch(err => {
