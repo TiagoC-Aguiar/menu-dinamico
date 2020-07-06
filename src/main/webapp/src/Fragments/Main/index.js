@@ -1,33 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 import NavigationBar from '../NavigationBar'
 import Sidebar from '../Sidebar'
 
 import './Main.css'
 
-const menusData = [{
-  id: 1,
-  titulo: 'Home',
-  icone: 'faHome',
-  link: '/'
-},{
-  id: 2,
-  titulo: 'Cadastro',
-  icone: 'faDatabase',
-  link: '/cadastro'
-},
-{
-  id: 3,
-  titulo: 'Usuario',
-  icone: 'faUser',
-  link: '#'
-}]
-
 const Main = () => {
+  const [menus, setMenus] = useState([])
+
+  useEffect(() => {  
+    loadMenus()
+  }, [])
+
+  const loadMenus = () => {
+    console.log('renderiza menu')  
+    return axios.get('menus').then(response => {
+      setMenus(response.data)
+    }).catch(err => {
+      console.log('*** errou')
+      console.log(err)
+    })
+  }
+
   return (
     <div className="main">
       <NavigationBar />  
-      <Sidebar menus={menusData} />
+      <Sidebar menus={menus} />
     </div>
   )
 }

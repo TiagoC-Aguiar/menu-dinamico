@@ -1,6 +1,16 @@
 ## Menu dinâmico
 
-Crie um banco de dados em MySQL com o nome dashboard_teste1
+Crie um banco de dados e passe suas credenciais no arquivo 
+[applications.properties](https://github.com/TiagoC-Aguiar/menu-dinamico/tree/master/src/main/resources/applications.properties), 
+localizado em src/main/resources
+
+Exemplo: (um banco de dados chamado menu_teste em MySQL)
+
+`spring.datasource.url=jdbc:mysql://localhost:3306/menu_teste`
+
+`spring.datasource.username=root`
+
+`spring.datasource.password= `
 
 Baixe e abra o projeto do menu em uma IDE e o execute. (recomendado)
 

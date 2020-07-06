@@ -8,23 +8,23 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Sidebar.css'
 
-const Sidebar = () => {
-  const [menus, setMenus] = useState([])
+const Sidebar = ({ menus }) => {
+  // const [menus, setMenus] = useState([])
 
-  useEffect(() => {  
-    loadMenus()
-  }, [])
+  // useEffect(() => {  
+  //   loadMenus()
+  // }, [])
 
-  const loadMenus = () => {
-    console.log('renderiza menu')  
-    return axios.get('menus').then(response => {
-      setMenus(response.data)
+  // const loadMenus = () => {
+  //   console.log('renderiza menu')  
+  //   return axios.get('menus').then(response => {
+  //     setMenus(response.data)
 
-    }).catch(err => {
-      console.log('*** errou')
-      console.log(err)
-    })
-  }
+  //   }).catch(err => {
+  //     console.log('*** errou')
+  //     console.log(err)
+  //   })
+  // }
 
   const menuList = menus.map(menu => (    
     <Nav.Item key={menu.id}>      
