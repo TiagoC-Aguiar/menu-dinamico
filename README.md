@@ -2,10 +2,12 @@
 
 Permite salvar os menus de forma dinâmica em um banco de dados e acessá-los conforme a regra de negócio aplicada. 
  
+[Clique aqui](https://menu-dinamico-aa2b8.web.app/) para ver uma demonstração da tela.
+ 
 ![screen](./img/screen.png)
 
 #### Crie um banco de dados
-Digite suas informações de acesso, no arquivo [applications.properties](https://github.com/TiagoC-Aguiar/menu-dinamico/blob/master/src/main/resources/application.properties), 
+Digite suas informações de acesso, no arquivo [application.properties](https://github.com/TiagoC-Aguiar/menu-dinamico/blob/master/src/main/resources/application.properties), 
 localizado em src/main/resources
 
 Exemplo: (um banco de dados chamado menu_teste em MySQL)
