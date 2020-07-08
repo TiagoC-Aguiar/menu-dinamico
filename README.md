@@ -1,7 +1,9 @@
 ## Menu dinâmico
 
-Crie um banco de dados e passe suas credenciais no arquivo 
-[applications.properties](https://github.com/TiagoC-Aguiar/menu-dinamico/tree/master/src/main/resources/applications.properties), 
+![screen](./img/screen.png)
+
+#### Crie um banco de dados
+Digite suas informações de acesso, no arquivo [applications.properties](https://github.com/TiagoC-Aguiar/menu-dinamico/blob/master/src/main/resources/application.properties), 
 localizado em src/main/resources
 
 Exemplo: (um banco de dados chamado menu_teste em MySQL)
@@ -12,16 +14,18 @@ Exemplo: (um banco de dados chamado menu_teste em MySQL)
 
 `spring.datasource.password= `
 
-Baixe e abra o projeto do menu em uma IDE e o execute. (recomendado)
+Baixe e abra o projeto em uma IDE e o execute. (recomendado)
 
-Ou digite o comando abaixo no terminal para executar o spring-boot
+Ou abra o terminal, na pasta raiz do projeto, e digite o comando abaixo
 
-`mvn spring-boot:run`
+`./mvnw spring-boot:run`
 
 Acesse o front-end dentro do diretório [src/main/webapp](https://github.com/TiagoC-Aguiar/menu-dinamico/tree/master/src/main/webapp)
 
-Digite o comando abaixo para excutar o front-end
+Digite o comando abaixo para atualizar as dependências e excutar o front-end
+
+`yarn install`
 
 `yarn start`
 
-Abra o navegador e acesse o projeto em [http://localhost:3000](http://localhost:3000)
+Abra o navegador e digite [http://localhost:3000](http://localhost:3000) na url para ver o projeto.

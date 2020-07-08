@@ -9,7 +9,7 @@ import './NavigationBar.css'
 
 const NavigationBar = () => {
   return (
-    <Navbar className="main-header justify-content-between" bg="danger">
+    <Navbar className="main-header justify-content-between" bg="light">
       <Nav>
         <Nav.Link href="#">
           <FontAwesomeIcon icon={faBars} />
