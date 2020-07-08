@@ -1,5 +1,7 @@
 ## Menu dinâmico
 
+Permite salvar os menus de forma dinâmica em um banco de dados e acessá-los conforme a regra de negócio aplicada. 
+ 
 ![screen](./img/screen.png)
 
 #### Crie um banco de dados
@@ -14,13 +16,13 @@ Exemplo: (um banco de dados chamado menu_teste em MySQL)
 
 `spring.datasource.password= `
 
-Baixe e abra o projeto em uma IDE e o execute. (recomendado)
+#### Baixe e abra o projeto em uma IDE e o execute. (recomendado)
 
 Ou abra o terminal, na pasta raiz do projeto, e digite o comando abaixo
 
 `./mvnw spring-boot:run`
 
-Acesse o front-end dentro do diretório [src/main/webapp](https://github.com/TiagoC-Aguiar/menu-dinamico/tree/master/src/main/webapp)
+#### Acesse o front-end dentro do diretório [src/main/webapp](https://github.com/TiagoC-Aguiar/menu-dinamico/tree/master/src/main/webapp) para executá-lo
 
 Digite o comando abaixo para atualizar as dependências e excutar o front-end
 
@@ -28,4 +30,4 @@ Digite o comando abaixo para atualizar as dependências e excutar o front-end
 
 `yarn start`
 
-Abra o navegador e digite [http://localhost:3000](http://localhost:3000) na url para ver o projeto.
+#### Abra o navegador e digite [http://localhost:3000](http://localhost:3000) na url para ver o projeto.
